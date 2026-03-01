@@ -1,0 +1,146 @@
+/* Style the Image Used to Trigger the Modal */
+.Achiev_1,
+.Achiev_2,
+.Achiev_3{
+	cursor: pointer;
+	transition: 0.3s;
+	position: relative;
+}
+
+@media screen and (max-width: 640px) {
+	.modal-contenT img{ height: unset !important; }
+}
+
+/* The Modal (background) */
+.modal {
+	top: 0; left: 0; right: 0; bottom: 0;
+	position: fixed; /* Stay in place */
+	display: none; /* Hidden by default */
+	opacity: 0;	/* Faded effect */ 
+	overflow: auto;  /*Enable scroll if needed */
+	background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+	transition: .5s;
+	z-index: 15; /* Sit on top */
+}
+
+/* Modal Content (Image) */
+.modal-contenT {
+	margin: 1% auto;
+	display: block;
+	height: 80vh;
+	background: none;
+	/*max-height: 700px;*/
+}
+.modal-contenT img{
+	margin: auto;
+	/*max-width: unset;*/
+	height: 100%;
+	/*box-shadow: 3px 5px 2px rgba(0,0,0,.4);*/
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+.Mcaption {
+	position: absolute;
+	display: block;
+	margin: auto;
+	bottom: 20%;
+	left: 10%;
+	height: auto;
+	width: 80%;
+	max-width: 80%;
+	text-align: center;
+	color: #ccc;
+	padding: 10px 20px;
+	background: rgba(0,0,0,.7);
+	transition: .5s;
+}
+
+/* Add Animation - Zoom in the Modal */
+@keyframes zoom {
+	from {transform:scale(0)} 
+	to {transform:scale(1)}
+}
+@keyframes slide1{
+	from { transform: translateY(100px) } 
+	to { transform: translateY(0) }
+}
+.modal-contenT, .Mcaption {	animation: zoom 0.6s }
+.modal-thumb{ animation: slide1 1s }
+
+/* The Close Button */
+.close {
+	position: fixed;
+	top: 15px;
+	right: 15px;
+	width: 50px;
+    height: 50px;
+	color: #fff;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+	opacity: 1;
+	border-radius: 50%;
+	/*border: 1px dashed;*/
+}
+.close:before,
+.close:after{
+	content: '';
+    position: absolute;
+    display: block;
+    top: 25px;
+    left: 0;
+    height: 8px;
+    width: 100%;
+    background: #fff;
+    border: 2px solid rgba(0,0,0,.5);
+    border-radius: 10px;
+    transition: 0.5s ease-in;
+    transform: rotate(45deg);
+}
+.close:after{
+    transform: rotate(-45deg);
+	
+}
+
+.close:hover,
+.close:focus {
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer;
+	opacity: .5;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+	
+	.modal-contenT { width: 100% }
+
+	.Mcaption {
+		max-width: 100%;
+		width: 90%;
+		left: 5%;
+		opacity: .8;
+		overflow-y: hidden;
+		height: 40px;
+	}
+	.Mcaption:hover,
+	.Mcaption:focus,
+	.Mcaption:active,
+	.Mcaption:visited{
+		height: 230px;
+		opacity: 1;
+	}
+	.Mcaption:before {
+		content: '⇃  Нажмите чтобы увидеть  ⇂';
+		display: block;
+		font-size: 1.3em;
+	}
+	.Mcaption:hover:before,
+	.Mcaption:focus:before {
+		display: none;
+	}
+}
+
+
+.show{ opacity: 1 }
+/*.hide{ opacity: 0 }*/

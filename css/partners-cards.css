@@ -1,0 +1,177 @@
+/*http://sinewave.froid.works/aqua.html*/
+
+.about-info{
+  margin-top: 85px;
+}
+
+.flip-container{
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  height: 242px;
+}
+
+@media (min-width: 768px) {
+  .flip-container {
+    height: 180px;
+  }
+}
+
+.flipper{
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: relative;
+  transition: .6s;
+}
+
+.flip-container:hover .flipper{
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.front,
+.back{
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  width: 100%;
+}
+
+.front{
+  z-index: 1;
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+
+.info-box{
+  position: relative;
+  text-align: center;
+  min-height: 180px;
+  border: 2px solid #00A2E7;
+  border-radius: 4px;
+  padding: 0 5%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 80px;
+  background: #fff;
+  transition: all .5s ease;
+}
+/* 
+@media (min-width: 768px) {
+  .info-box {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+} */
+
+
+.circle-icon{
+  width: 82px;
+  height: 82px;
+  border-radius: 60%;
+  margin: -60px auto 0;
+  padding-top: 10px;
+  margin-bottom: 0;
+  text-align: center;
+  background-color: #00A2E7;
+  display: block;
+  font-size: 31px;
+  color: #ffffff;
+  line-height: 1;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .15);
+  font-family: 'icomoon' !important; 
+}
+.back .circle-icon{
+    background: #e0e0e070 /*#00a2e7*/ url(../img/ico-cloud-3.png) center no-repeat;
+    background-size: 80%;
+    border: 1px ridge;
+}
+
+.info-box a{
+    position: relative;
+    display: inline-table;
+}
+.info-box a:hover{
+    background: radial-gradient(rgba(186, 255, 255, 0.89), transparent, transparent);
+    text-shadow: 0 0 1px #fff;
+}
+.info-box a:before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+.info-box a:hover:before{
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+.info-box a:link,
+.info-box a:focus,
+.info-box a:hover,
+.info-box a:visited{
+  color: #fff;
+  text-decoration: none;
+}
+
+.front hr,
+.back hr{
+  border-top: 2px solid #00A2E7;
+  width: 60%;
+  margin: 6% auto;
+}
+.back hr{
+  border-color: #fff;
+  margin: 2% auto;
+}
+
+.heading-content{
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  color: #6e6e6e;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .about-info .info-box .heading-content {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .about-info .info-box .heading-content {
+    font-size: 20px;
+  }
+}
+
+.info-box.info-content .content-about {
+  display: block;
+}
+
+.content-about{  
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  color: #ffffff;
+}
+.info-content{
+  background: #00A2E7 url("../img/card-bg-line.png");
+  border-color: transparent;
+}
